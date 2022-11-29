@@ -1,14 +1,20 @@
 package com.example.proyectofinal.controller;
 
-import com.example.proyectofinal.model.AutoGym;
-import com.example.proyectofinal.service.ModelFactoryControllerService;
+import com.example.proyectofinal.service.AutoGym;
+import com.example.proyectofinal.model.User;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ModelFactoryController implements ModelFactoryControllerService {
+public class ModelFactoryController {
 
     AutoGym autoGym;
+
+    public AutoGym getAutoGym() {
+        return autoGym;
+    }
 
     private static class SingletonHolder{
         private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
@@ -20,22 +26,4 @@ public class ModelFactoryController implements ModelFactoryControllerService {
         System.out.println("invocación clase singleton");
         autoGym = new AutoGym();
     }
-
-    //Switch Scene
-
-    @Override
-    public void switchScene(ActionEvent e, String resource) throws IOException {
-        autoGym.getSceneService().switchScene(e,resource);
-    }
-
-    @Override
-    public void switchToLoginView(ActionEvent e) throws IOException {
-        autoGym.getSceneService().switchToLoginView(e);
-    }
-
-    @Override
-    public void switchToRegisterView(ActionEvent e) throws IOException {
-        autoGym.getSceneService().switchToRegisterView(e);
-    }
-
 }

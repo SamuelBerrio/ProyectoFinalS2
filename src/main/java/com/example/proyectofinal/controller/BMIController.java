@@ -1,11 +1,20 @@
 package com.example.proyectofinal.controller;
 
+import com.example.proyectofinal.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class BMIController {
+
+    ModelFactoryController mfc = ModelFactoryController.getInstance();
+
+    private final SceneController sceneController;
+
+    public BMIController() {
+        this.sceneController = new SceneController();
+    }
 
     @FXML
     private TextField alturaInput;
