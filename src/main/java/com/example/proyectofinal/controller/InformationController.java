@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
@@ -45,7 +46,7 @@ public class InformationController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Hilo creado para clonar arraylist
-       CompletableFuture.runAsync(()->mfc.getAutoGym().getInformationService().cloneArrayListUserDTO(mfc.getAutoGym().getUserService().getArrayListUsersDTO()));
+        mfc.getAutoGym().getInformationService().cloneArrayListUserDTO(mfc.getAutoGym().getUserService().getArrayListUsersDTO());
         usernameTbl.setCellValueFactory(new PropertyValueFactory<>("username"));
         ageTbl.setCellValueFactory(new PropertyValueFactory<>("age"));
         idTbl.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -60,6 +61,40 @@ public class InformationController implements Initializable {
     public void selectedUserDTO(MouseEvent mouseEvent){
         UserDTO userDTO = tblId.getSelectionModel().getSelectedItem();
         userSelectedLabel.setText(userDTO.getUsername());
+    }
+
+
+    @FXML
+    void bmiView(ActionEvent event) throws IOException {
+        sceneController.switchToBMIView(event);
+    }
+
+    @FXML
+    void ecView(ActionEvent event) throws IOException {
+        if (mfc.getAutoGym().getSceneValidatorService().validatorHA(mfc.getAutoGym().getUserService().getUserOn())){
+            sceneController.switchToECView(event);
+        }else {
+            System.out.println("Tu servicio no incluye esta automatizacion");
+        }
+    }
+
+    @FXML
+    void exitView(ActionEvent event) throws IOException {
+        sceneController.switchToLoginView(event);
+    }
+
+    @FXML
+    void homeView(ActionEvent event) throws IOException {
+        sceneController.switchToHomeView(event);
+    }
+
+    @FXML
+    void rdcView(ActionEvent event) throws IOException {
+        if (mfc.getAutoGym().getSceneValidatorService().validatorHMA(mfc.getAutoGym().getUserService().getUserOn())){
+            sceneController.switchToRDCView(event);
+        }else {
+            System.out.println("Tu servicio no incluye esta automatizacion");
+        }
     }
 
 }

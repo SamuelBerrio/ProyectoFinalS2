@@ -18,8 +18,7 @@ public class RegisterServiceImpl implements RegisterService {
         if (username.equals("")||password.equals("")||id.equals("")||service.equals("")){
             return false;
         }else {
-            autoGym.getUserService().getArrayListUsers().add(new User(username,password,age,id,service));
-            autoGym.getUserService().getArrayListUsersDTO().add(new UserDTO(username,age,service,id));
+            autoGym.getUserService().addUser(new User(username,password,age,id,service),new UserDTO(username,age,service,id));
             return true;
         }
     }

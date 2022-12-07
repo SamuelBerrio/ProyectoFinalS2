@@ -7,6 +7,10 @@ public class User {
     private String id;
     private String service;
 
+    public User() {
+
+    }
+
     public String getUsername() {
         return username;
     }

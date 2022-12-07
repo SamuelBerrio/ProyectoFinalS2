@@ -56,6 +56,7 @@ public class RegisterController implements Initializable{
         try {
             if(mfc.getAutoGym().getRegisterService().addUser(userNameInput.getText(), passwordInput.getText(), Integer.parseInt(ageInput.getText()), idInput.getText(), serviceInput.getSelectionModel().getSelectedItem())){
                 mfc.getAutoGym().getUserService().printUsers();
+                sceneController.switchToLoginView(event);
                 userNameInput.setText("");
                 passwordInput.setText("");
                 ageInput.setText("");
@@ -66,6 +67,8 @@ public class RegisterController implements Initializable{
             }
         }catch (NumberFormatException e){
             System.out.println("Ingrese una edad valida "+e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

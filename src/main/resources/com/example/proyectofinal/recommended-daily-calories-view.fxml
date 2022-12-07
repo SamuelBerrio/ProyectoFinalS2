@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.example.proyectofinal.controller.RDCController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox layoutY="34.0" prefHeight="366.0" prefWidth="600.0">
          <children>
@@ -24,7 +24,7 @@
                               <Insets left="70.0" />
                            </HBox.margin>
                         </Label>
-                        <ComboBox prefWidth="150.0">
+                        <ComboBox fx:id="generoInput" prefWidth="150.0">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -39,7 +39,7 @@
                         <Insets left="155.0" top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="pesoInput">
                      <VBox.margin>
                         <Insets left="60.0" right="60.0" top="5.0" />
                      </VBox.margin>
@@ -49,7 +49,7 @@
                         <Insets left="150.0" top="15.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField>
+                  <TextField fx:id="alturaInput">
                      <VBox.margin>
                         <Insets left="60.0" right="60.0" top="5.0" />
                      </VBox.margin>
@@ -61,7 +61,7 @@
                               <Insets left="50.0" />
                            </HBox.margin>
                         </Label>
-                        <ComboBox prefWidth="150.0">
+                        <ComboBox fx:id="nivelActividadInput" prefWidth="150.0">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -71,7 +71,7 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <Button mnemonicParsing="false" text="Calcular">
+                  <Button mnemonicParsing="false" onAction="#calcularButton" text="Calcular">
                      <VBox.margin>
                         <Insets left="150.0" top="15.0" />
                      </VBox.margin>
@@ -86,7 +86,7 @@
                               <Insets left="70.0" />
                            </padding>
                         </Label>
-                        <Label prefHeight="18.0" prefWidth="327.0">
+                        <Label fx:id="resultadoLabel" prefHeight="18.0" prefWidth="327.0">
                            <HBox.margin>
                               <Insets top="30.0" />
                            </HBox.margin>
@@ -104,17 +104,17 @@
       </HBox>
       <HBox prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: darkcyan;">
          <children>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Exit">
+            <Button mnemonicParsing="false" onAction="#exitView" style="-fx-font-family: serif;" text="Exit">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Home">
+            <Button mnemonicParsing="false" onAction="#homeView" style="-fx-font-family: serif;" text="Home">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Body mass index">
+            <Button mnemonicParsing="false" onAction="#bmiView" style="-fx-font-family: serif;" text="Body mass index">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
@@ -124,12 +124,12 @@
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Calories expended">
+            <Button mnemonicParsing="false" onAction="#ecView" style="-fx-font-family: serif;" text="Calories expended">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Information">
+            <Button mnemonicParsing="false" onAction="#informationView" style="-fx-font-family: serif;" text="Information">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>

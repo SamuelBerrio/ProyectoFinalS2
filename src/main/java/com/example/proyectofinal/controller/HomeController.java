@@ -3,37 +3,35 @@ package com.example.proyectofinal.controller;
 import com.example.proyectofinal.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class BMIController {
+public class HomeController implements Initializable {
 
     ModelFactoryController mfc = ModelFactoryController.getInstance();
 
     private final SceneController sceneController;
 
-    public BMIController() {
+    public HomeController() {
         this.sceneController = new SceneController();
     }
 
-    @FXML
-    private TextField alturaInput;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("El usuario que esta en uso es "+ mfc.getAutoGym().getUserService().getUserOn().getUsername());
+    }
+
 
     @FXML
-    private TextField pesoInput;
-
-    @FXML
-    private Label resultLabel;
-
-    @FXML
-    void calcularButton(ActionEvent event) {
-        resultLabel.setText(String.valueOf(mfc.getAutoGym().getBmiService().calcularBMI(Double.parseDouble(alturaInput.getText()),Double.parseDouble(pesoInput.getText()))));
+    void bmiButton(ActionEvent event) throws IOException {
+        sceneController.switchToBMIView(event);
     }
 
     @FXML
-    void ecView(ActionEvent event) throws IOException {
+    void ecButton(ActionEvent event) throws IOException {
         if (mfc.getAutoGym().getSceneValidatorService().validatorHA(mfc.getAutoGym().getUserService().getUserOn())){
             sceneController.switchToECView(event);
         }else {
@@ -42,12 +40,12 @@ public class BMIController {
     }
 
     @FXML
-    void homeView(ActionEvent event) throws IOException {
-        sceneController.switchToHomeView(event);
+    void exitButton(ActionEvent event) throws IOException {
+        sceneController.switchToLoginView(event);
     }
 
     @FXML
-    void infoView(ActionEvent event) throws IOException {
+    void informationButton(ActionEvent event) throws IOException {
         if (mfc.getAutoGym().getSceneValidatorService().validatorA(mfc.getAutoGym().getUserService().getUserOn())){
             sceneController.switchToInformationView(event);
         }else {
@@ -56,17 +54,11 @@ public class BMIController {
     }
 
     @FXML
-    void exitView(ActionEvent event) throws IOException {
-        sceneController.switchToLoginView(event);
-    }
-
-    @FXML
-    void rdcView(ActionEvent event) throws IOException {
+    void rdcButton(ActionEvent event) throws IOException {
         if (mfc.getAutoGym().getSceneValidatorService().validatorHMA(mfc.getAutoGym().getUserService().getUserOn())){
             sceneController.switchToRDCView(event);
         }else {
             System.out.println("Tu servicio no incluye esta automatizacion");
         }
     }
-
 }

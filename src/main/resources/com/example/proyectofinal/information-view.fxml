@@ -13,7 +13,7 @@
    <children>
       <HBox layoutY="34.0" prefHeight="366.0" prefWidth="600.0">
          <children>
-            <TableView fx:id="tblId" prefHeight="366.0" prefWidth="406.0" onMouseClicked="#selectedUserDTO">
+            <TableView fx:id="tblId" onMouseClicked="#selectedUserDTO" prefHeight="366.0" prefWidth="406.0">
               <columns>
                 <TableColumn fx:id="usernameTbl" prefWidth="127.20001524686813" text="UserName" />
                   <TableColumn fx:id="ageTbl" prefWidth="59.99993896484375" text="Age" />
@@ -28,7 +28,7 @@
                         <Insets left="50.0" top="20.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="userSelectedLabel" text="juanes">
+                  <Label fx:id="userSelectedLabel">
                      <VBox.margin>
                         <Insets left="80.0" right="60.0" top="10.0" />
                      </VBox.margin>
@@ -44,27 +44,27 @@
       </HBox>
       <HBox prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: darkcyan;">
          <children>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Exit">
+            <Button mnemonicParsing="false" onAction="#exitView" style="-fx-font-family: serif;" text="Exit">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Home">
+            <Button mnemonicParsing="false" onAction="#homeView" style="-fx-font-family: serif;" text="Home">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Body mass index">
+            <Button mnemonicParsing="false" onAction="#bmiView" style="-fx-font-family: serif;" text="Body mass index">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Recommended Daily Calories">
+            <Button mnemonicParsing="false" onAction="#rdcView" style="-fx-font-family: serif;" text="Recommended Daily Calories">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Calories expended">
+            <Button mnemonicParsing="false" onAction="#ecView" style="-fx-font-family: serif;" text="Calories expended">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>

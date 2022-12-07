@@ -30,7 +30,6 @@ public class InformationServiceImpl implements InformationService{
 
     @Override
     public void cloneArrayListUserDTO(List<UserDTO> usersDTO) {
-       elementObservableList = (ObservableList<UserDTO>) usersDTO;
-       elementObservableList.forEach(System.out::println);
+        elementObservableList.addAll(usersDTO);
     }
 }

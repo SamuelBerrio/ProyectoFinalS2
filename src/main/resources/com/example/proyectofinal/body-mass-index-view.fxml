@@ -65,7 +65,7 @@
       </HBox>
       <HBox prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: darkcyan;">
          <children>
-            <Button mnemonicParsing="false" onAction="#loginView" style="-fx-font-family: serif;" text="Exit">
+            <Button mnemonicParsing="false" onAction="#exitView" style="-fx-font-family: serif;" text="Exit">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
@@ -75,7 +75,7 @@
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#bmiView" style="-fx-font-family: serif;" text="Body mass index">
+            <Button mnemonicParsing="false" style="-fx-font-family: serif;" text="Body mass index">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
@@ -85,7 +85,7 @@
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#ceView" style="-fx-font-family: serif;" text="Calories expended">
+            <Button mnemonicParsing="false" onAction="#ecView" style="-fx-font-family: serif;" text="Calories expended">
                <HBox.margin>
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>

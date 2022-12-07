@@ -34,8 +34,18 @@ public class SceneController {
     }
 
     public void switchToECView(ActionEvent e)throws IOException{
-        switchScene(e,"");
+        switchScene(e,"expended-calories-view.fxml");
     }
 
+    public void switchToHomeView(ActionEvent e)throws IOException{
+        switchScene(e,"home-view.fxml");
+    }
 
+    public void switchToInformationView(ActionEvent e)throws IOException{
+        switchScene(e,"information-view.fxml");
+    }
+
+    public void switchToRDCView(ActionEvent e)throws IOException{
+        switchScene(e,"recommended-daily-calories-view.fxml");
+    }
 }
