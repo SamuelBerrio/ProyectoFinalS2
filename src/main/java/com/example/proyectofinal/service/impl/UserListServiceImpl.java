@@ -70,4 +70,13 @@ public class UserListServiceImpl implements UserListService {
         }
     }
 
+    @Override
+    public void saveUsers(){
+        try{
+            Persistence.saveUsers(arrayListUsers);
+        }catch (IOException err){
+            System.out.println(err.getMessage());
+        }
+    }
+
     }

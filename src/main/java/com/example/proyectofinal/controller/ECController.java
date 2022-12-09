@@ -9,8 +9,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.ResourceBundle;
 
-public class ECController {
+public class ECController implements Initializable{
 
     ModelFactoryController mfc = ModelFactoryController.getInstance();
 
@@ -32,10 +36,20 @@ public class ECController {
 
     @FXML
     private TextField tiempoInput;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ArrayList<String> list = new ArrayList<>();
+        Collections.addAll(list, "Running", "Caminar","Nadar","Gym","Ciclismo","Baile","Yoga","Senderismo","Boxeo","Aerobicos");
+        actividadInput.getItems().addAll(list);
+    }
 
     @FXML
     void calcularButton(ActionEvent event) {
-
+        try {
+            resultadoLabel.setText(String.valueOf(mfc.getAutoGym().getEcService().calcularEC(actividadInput.getSelectionModel().getSelectedItem(), Integer.parseInt(pesoInput.getText()), Double.parseDouble(tiempoInput.getText()))));
+        }catch (NullPointerException e){
+            System.out.println(e);
+        }
     }
 
     @FXML

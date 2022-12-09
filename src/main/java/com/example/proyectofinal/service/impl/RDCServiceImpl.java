@@ -10,4 +10,13 @@ public class RDCServiceImpl implements RDCService {
     public RDCServiceImpl(AutoGym autoGym) {
         this.autoGym = autoGym;
     }
+
+    @Override
+    public Double calcularRDC(String genero, Double peso, Double altura, Double edad) {
+        if (genero.equals("Masculino")){
+            return (peso*10)+(6.25*altura)-(5*edad)+5;
+        }else {
+            return (peso*10)+(6.25*altura)-(5*edad)-161;
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.proyectofinal.service.impl;
 
 import com.example.proyectofinal.dto.UserDTO;
+import com.example.proyectofinal.model.User;
 import com.example.proyectofinal.service.AutoGym;
 import com.example.proyectofinal.service.InformationService;
 import javafx.collections.FXCollections;
@@ -30,6 +31,14 @@ public class InformationServiceImpl implements InformationService{
 
     @Override
     public void cloneArrayListUserDTO(List<UserDTO> usersDTO) {
+        elementObservableList.clear();
         elementObservableList.addAll(usersDTO);
+    }
+
+    @Override
+    public void eliminarUser(String username) {
+        autoGym.getUserService().getArrayListUsers().removeIf(user -> username.equals(user.getUsername()));
+
+        autoGym.getUserService().getArrayListUsersDTO().removeIf(userDTO -> username.equals(userDTO.getUsername()));
     }
 }

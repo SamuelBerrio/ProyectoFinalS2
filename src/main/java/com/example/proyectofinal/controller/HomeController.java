@@ -4,6 +4,7 @@ import com.example.proyectofinal.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,9 +20,17 @@ public class HomeController implements Initializable {
         this.sceneController = new SceneController();
     }
 
+    @FXML
+    private Label serviceOnLabel;
+
+    @FXML
+    private Label userOnLabel;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("El usuario que esta en uso es "+ mfc.getAutoGym().getUserService().getUserOn().getUsername());
+        userOnLabel.setText(mfc.getAutoGym().getUserService().getUserOn().getUsername());
+        serviceOnLabel.setText(mfc.getAutoGym().getUserService().getUserOn().getService());
     }
 
 

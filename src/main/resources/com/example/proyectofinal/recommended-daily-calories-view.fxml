@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:controller="com.example.proyectofinal.controller.RDCController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.RDCController">
    <children>
       <HBox layoutY="34.0" prefHeight="366.0" prefWidth="600.0">
          <children>
@@ -55,32 +55,30 @@
                      </VBox.margin>
                   </TextField>
                   <HBox prefHeight="37.0" prefWidth="357.0">
-                     <children>
-                        <Label text="Nivel de Actividad">
-                           <HBox.margin>
-                              <Insets left="50.0" />
-                           </HBox.margin>
-                        </Label>
-                        <ComboBox fx:id="nivelActividadInput" prefWidth="150.0">
-                           <HBox.margin>
-                              <Insets left="20.0" />
-                           </HBox.margin>
-                        </ComboBox>
-                     </children>
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
                   </HBox>
+                  <Label text="Edad">
+                     <VBox.margin>
+                        <Insets left="167.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="edadInput">
+                     <VBox.margin>
+                        <Insets left="120.0" right="120.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
                   <Button mnemonicParsing="false" onAction="#calcularButton" text="Calcular">
                      <VBox.margin>
-                        <Insets left="150.0" top="15.0" />
+                        <Insets left="150.0" top="20.0" />
                      </VBox.margin>
                   </Button>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label prefHeight="18.0" prefWidth="371.0" text="Resultado:">
                            <HBox.margin>
-                              <Insets top="30.0" />
+                              <Insets top="10.0" />
                            </HBox.margin>
                            <padding>
                               <Insets left="70.0" />
@@ -88,7 +86,7 @@
                         </Label>
                         <Label fx:id="resultadoLabel" prefHeight="18.0" prefWidth="327.0">
                            <HBox.margin>
-                              <Insets top="30.0" />
+                              <Insets top="10.0" />
                            </HBox.margin>
                         </Label>
                      </children>

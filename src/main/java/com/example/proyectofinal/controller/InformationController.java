@@ -45,17 +45,20 @@ public class InformationController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Hilo creado para clonar arraylist
         mfc.getAutoGym().getInformationService().cloneArrayListUserDTO(mfc.getAutoGym().getUserService().getArrayListUsersDTO());
+        tblId.setItems(mfc.getAutoGym().getInformationService().getObservableListUserDTO());
         usernameTbl.setCellValueFactory(new PropertyValueFactory<>("username"));
         ageTbl.setCellValueFactory(new PropertyValueFactory<>("age"));
         idTbl.setCellValueFactory(new PropertyValueFactory<>("id"));
         serviceTbl.setCellValueFactory(new PropertyValueFactory<>("service"));
-        tblId.setItems(mfc.getAutoGym().getInformationService().getObservableListUserDTO());
+        tblId.refresh();
     }
 
     @FXML
-    void eliminarButton(ActionEvent event) {
+    void eliminarButton(ActionEvent event) throws IOException {
+        mfc.getAutoGym().getInformationService().eliminarUser(userSelectedLabel.getText());
+        mfc.getAutoGym().getUserService().saveUsers();
+        sceneController.switchToInformationView(event);
     }
 
     public void selectedUserDTO(MouseEvent mouseEvent){

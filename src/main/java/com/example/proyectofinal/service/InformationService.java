@@ -9,4 +9,6 @@ public interface InformationService {
     ObservableList<UserDTO> getObservableListUserDTO();
 
     void cloneArrayListUserDTO(List<UserDTO> usersDTO);
+
+    void eliminarUser(String username);
 }

@@ -24,7 +24,7 @@
                <children>
                   <Label text="Peso (Kg)">
                      <VBox.margin>
-                        <Insets left="150.0" top="30.0" />
+                        <Insets left="150.0" top="50.0" />
                      </VBox.margin>
                   </Label>
                   <TextField fx:id="pesoInput">
@@ -45,9 +45,9 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label text="Tiempo que se dedica (mins)">
+                  <Label text="Tiempo de actividad (H)">
                      <VBox.margin>
-                        <Insets left="115.0" top="20.0" />
+                        <Insets left="115.0" top="30.0" />
                      </VBox.margin>
                   </Label>
                   <TextField fx:id="tiempoInput">
@@ -66,8 +66,7 @@
                               <Insets left="120.0" />
                            </HBox.margin>
                         </Label>
-                        <Label />
-                        <Label fx:id="resultadoLabel" />
+                        <Label prefHeight="18.0" prefWidth="134.0" />
                      </children>
                      <VBox.margin>
                         <Insets top="40.0" />

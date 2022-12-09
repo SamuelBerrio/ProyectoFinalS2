@@ -19,4 +19,6 @@ public interface UserListService{
     void initializeUsersList();
 
     void addUser(User user, UserDTO userDTO);
+
+    void saveUsers();
 }
